@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.flex-div img {
+  width: 90%;
+}
+
+.flex-div span{
+  width: 10%;
+    position: absolute;
+    margin-top: 20px;
+    font-size: 60px;
+    color: white;
+    text-shadow: 2px 0 0 #060505, -2px 0 0 #0e0c0c, 0 2px 0 #120d0d, 0 -2px 0 #060505, 1px 1px #0e0b0b, -1px -1px 0 #0e0a0a, 1px -1px 0 #0c0707, -1px 1px 0 #0a0707;
+    left: 80px;
+}
+
+.flex-div span:nth-child(1){
+  margin-top: 460px;
+}
