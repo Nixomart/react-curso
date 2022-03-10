@@ -24,8 +24,20 @@ function App() {
   const onClickExport = function (evento) {
 
     //funcion flecha canvas que se va a ejecturar cuando se haya procesado todo lo anterior
-    html2canvas(document.querySelector("#capture")).then(canvas => {
-      document.body.appendChild(canvas)
+    //meme viene del id del div donde se encuentra la imagen y los span
+    html2canvas(document.querySelector("#meme")).then(canvas => {
+      
+      let img    = canvas.toDataURL("image/jpg");
+      //escribe la url de la imagen
+      //document.write('<img src="'+img+'"/>');
+      
+      //creamos un elemtno ancla
+      let link = document.createElement('A');
+      link.download = 'meme.jpg';
+      //el href va hacer la imagen convertida a url en la linea 29
+      link.href = img;
+      link.click();
+      
   });
   }
 
@@ -47,7 +59,7 @@ function App() {
 
       <button onClick={onClickExport}>Exportar momo :V </button>
 
-      <div className="flex-div">
+      <div className="flex-div" id="meme">
         <span>{linea1}</span><br />
         <span>{linea2}</span>
         <img src={"/img/"+ img +".jpg"}></img>
